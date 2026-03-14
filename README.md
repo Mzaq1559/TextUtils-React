@@ -11,8 +11,8 @@
 
 ## 📸 Preview
 
-|              Light Mode              |              Dark Mode               |              404 Page              |
-| :----------------------------------: | :----------------------------------: | :--------------------------------: |
+| Light Mode | Dark Mode | 404 Page |
+|:---:|:---:|:---:|
 | ![Home Page](./screenshots/home.png) | ![Dark Mode](./screenshots/dark.png) | ![404 Page](./screenshots/404.png) |
 
 ---
@@ -20,36 +20,32 @@
 ## ✨ Features
 
 ### ✏️ Text Transformations
-
-| Feature                      | Description                                             |
-| ---------------------------- | ------------------------------------------------------- |
-| 🔠 **Uppercase / Lowercase** | One-click case conversion                               |
-| 🧹 **Remove Extra Spaces**   | Strips and normalizes all whitespace                    |
-| 🔍 **Find & Replace**        | Replace all occurrences of any word or phrase instantly |
+| Feature | Description |
+|---|---|
+| 🔠 **Uppercase / Lowercase** | One-click case conversion |
+| 🧹 **Remove Extra Spaces** | Strips and normalizes all whitespace |
+| 🔍 **Find & Replace** | Replace all occurrences of any word or phrase instantly |
 
 ### 📊 Analysis & Insights
-
-| Feature                       | Description                                               |
-| ----------------------------- | --------------------------------------------------------- |
-| 🔢 **Word & Character Count** | Updates in real time as you type                          |
-| 📝 **Sentence Count**         | Detects sentences by punctuation                          |
-| ⏱️ **Reading Time**           | Estimates minutes to read based on word count             |
+| Feature | Description |
+|---|---|
+| 🔢 **Word & Character Count** | Updates in real time as you type |
+| 📝 **Sentence Count** | Detects sentences by punctuation |
+| ⏱️ **Reading Time** | Estimates minutes to read based on word count |
 | 📊 **Letter Frequency Chart** | Visual bar chart of every letter's frequency in your text |
 
 ### 🛠️ Utilities
-
-| Feature                  | Description                                              |
-| ------------------------ | -------------------------------------------------------- |
-| 📋 **Copy to Clipboard** | Copy your full text with one click                       |
-| ⬇️ **Download as .txt**  | Export your text as a `.txt` file instantly              |
-| 🔊 **Text-to-Speech**    | Have your text read aloud using the browser's Speech API |
-| 🌙 **Dark Mode**         | Toggleable dark theme, synced across all pages           |
+| Feature | Description |
+|---|---|
+| 📋 **Copy to Clipboard** | Copy your full text with one click |
+| ⬇️ **Download as .txt** | Export your text as a `.txt` file instantly |
+| 🔊 **Text-to-Speech** | Have your text read aloud using the browser's Speech API |
+| 🌙 **Dark Mode** | Toggleable dark theme, synced across all pages |
 
 ### 🔗 Navigation
-
-| Feature             | Description                                               |
-| ------------------- | --------------------------------------------------------- |
-| **React Router v6** | Smooth client-side routing between Home and About         |
+| Feature | Description |
+|---|---|
+| **React Router v6** | Smooth client-side routing between Home and About |
 | **Custom 404 Page** | Friendly error page for invalid routes with a back button |
 
 ---
@@ -130,10 +126,10 @@ TextUtils-React/
 
 1. **Paste or type** any text into the input area on the Home page.
 2. Use the **action buttons** to transform your text:
-   - _Uppercase / Lowercase_ — instant case conversion
-   - _Remove Extra Spaces_ — cleans up irregular spacing
-   - _Copy Text_ — copies to clipboard
-   - _Clear_ — wipes the textarea
+   - *Uppercase / Lowercase* — instant case conversion
+   - *Remove Extra Spaces* — cleans up irregular spacing
+   - *Copy Text* — copies to clipboard
+   - *Clear* — wipes the textarea
 3. Use **Find & Replace** to swap out any word or phrase across the entire text.
 4. Click **Read Aloud** to have the browser speak your text. Click **Stop** to cancel.
 5. Click **Download .txt** to save your text as a local file.
@@ -145,22 +141,22 @@ TextUtils-React/
 
 ## 🌐 Routing Overview
 
-| Route    | Component  | Description                   |
-| -------- | ---------- | ----------------------------- |
-| `/`      | `TextForm` | Main text analyzer (Home)     |
-| `/about` | `About`    | About the application         |
-| `*`      | `NotFound` | Custom 404 for unknown routes |
+| Route | Component | Description |
+|---|---|---|
+| `/` | `TextForm` | Main text analyzer (Home) |
+| `/about` | `About` | About the application |
+| `*` | `NotFound` | Custom 404 for unknown routes |
 
 ---
 
 ## 🌐 Browser Compatibility
 
-| Feature          | Chrome | Firefox    | Safari | Edge |
-| ---------------- | ------ | ---------- | ------ | ---- |
-| Text-to-Speech   | ✅     | ⚠️ Partial | ✅     | ✅   |
-| Clipboard API    | ✅     | ✅         | ✅     | ✅   |
-| Download (.txt)  | ✅     | ✅         | ✅     | ✅   |
-| Letter Frequency | ✅     | ✅         | ✅     | ✅   |
+| Feature | Chrome | Firefox | Safari | Edge |
+|---|---|---|---|---|
+| Text-to-Speech | ✅ | ⚠️ Partial | ✅ | ✅ |
+| Clipboard API | ✅ | ✅ | ✅ | ✅ |
+| Download (.txt) | ✅ | ✅ | ✅ | ✅ |
+| Letter Frequency | ✅ | ✅ | ✅ | ✅ |
 
 > ⚠️ Text-to-Speech on Firefox may behave inconsistently depending on the operating system.
 
@@ -189,9 +185,8 @@ This project is licensed under the [MIT License](./LICENSE).
 ## 👤 Author
 
 **Muhammad Zaqawi**
-
 - GitHub: [@Mzaq1559](https://github.com/Mzaq1559)
 
 ---
 
-> _Built with ❤️ using React.js_
+> *Built with ❤️ using React.js*
