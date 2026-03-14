@@ -1,35 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
+export default function About(props) {
+  const isDark = props.mode === "dark";
 
-  const [btntext, setBtnText] = useState("Enable Dark Mode");
+  const cardStyle = {
+    color: isDark ? "white" : "#1b1846",
+    backgroundColor: isDark ? "#343a40" : "white",
+    borderColor: isDark ? "#495057" : "#dee2e6",
+  };
 
-  const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-        border: "2px solid white",
-      });
-      setBtnText("Enable Dark Mode");
-    } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setBtnText("Enable Light Mode");
-    }
+  const btnStyle = {
+    ...cardStyle,
   };
 
   return (
-    <div className="container" style={myStyle}>
-      <h3 className="my-3">About Us</h3>
-      <div className="accordion" id="accordionExample">
-        <div className="accordion-item">
+    <div className="container my-4" style={{ color: cardStyle.color }}>
+      <h3 className="mb-1">About TextUtils</h3>
+      <p className="text-muted mb-4">
+        A fast, lightweight text utility built with React.
+      </p>
+
+      <div className="accordion" id="accordionAbout">
+        {/* Item 1 */}
+        <div className="accordion-item" style={cardStyle}>
           <h2 className="accordion-header">
             <button
               className="accordion-button"
@@ -38,30 +31,27 @@ export default function About() {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={myStyle}
+              style={btnStyle}
             >
-              Accordion Item #1
+              📝 What is TextUtils?
             </button>
           </h2>
           <div
             id="collapseOne"
             className="accordion-collapse collapse show"
-            data-bs-parent="#accordionExample"
-            style={myStyle}
+            data-bs-parent="#accordionAbout"
           >
-            <div className="accordion-body">
-              <strong>This is the first item’s accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It’s also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            <div className="accordion-body" style={cardStyle}>
+              TextUtils is a simple, browser-based text analysis tool built with{" "}
+              <strong>React.js</strong>. It lets you transform and inspect text
+              instantly — no account, no installation, no fuss. Just paste your
+              text and start working.
             </div>
           </div>
         </div>
-        <div className="accordion-item">
+
+        {/* Item 2 */}
+        <div className="accordion-item" style={cardStyle}>
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
@@ -70,30 +60,31 @@ export default function About() {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={myStyle}
+              style={btnStyle}
             >
-              Accordion Item #2
+              ✨ Features
             </button>
           </h2>
           <div
             id="collapseTwo"
             className="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            style={myStyle}
+            data-bs-parent="#accordionAbout"
           >
-            <div className="accordion-body">
-              <strong>This is the second item’s accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It’s also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            <div className="accordion-body" style={cardStyle}>
+              <ul className="mb-0">
+                <li>Convert text to UPPERCASE or lowercase</li>
+                <li>Remove extra whitespace instantly</li>
+                <li>Copy text to clipboard with one click</li>
+                <li>Word, character, and sentence count</li>
+                <li>Estimated reading time</li>
+                <li>Dark mode support</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className="accordion-item">
+
+        {/* Item 3 */}
+        <div className="accordion-item" style={cardStyle}>
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
@@ -102,38 +93,31 @@ export default function About() {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={myStyle}
+              style={btnStyle}
             >
-              Accordion Item #3
+              🛠️ Tech Stack
             </button>
           </h2>
           <div
             id="collapseThree"
             className="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            style={myStyle}
+            data-bs-parent="#accordionAbout"
           >
-            <div className="accordion-body">
-              <strong>This is the third item’s accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It’s also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            <div className="accordion-body" style={cardStyle}>
+              <ul className="mb-0">
+                <li>
+                  <strong>React.js</strong> — UI & state management via Hooks
+                </li>
+                <li>
+                  <strong>React Router v6</strong> — client-side routing
+                </li>
+                <li>
+                  <strong>Bootstrap 5</strong> — responsive layout & components
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container">
-        <button
-          onClick={toggleStyle}
-          type="button"
-          className="btn btn-primary my-3"
-        >
-          {btntext}
-        </button>
       </div>
     </div>
   );
