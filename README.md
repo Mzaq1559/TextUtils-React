@@ -11,32 +11,55 @@
 
 ## 📸 Preview
 
-| Light Mode | Dark Mode | 404 Page |
-|:---:|:---:|:---:|
+|              Light Mode              |              Dark Mode               |              404 Page              |
+| :----------------------------------: | :----------------------------------: | :--------------------------------: |
 | ![Home Page](./screenshots/home.png) | ![Dark Mode](./screenshots/dark.png) | ![404 Page](./screenshots/404.png) |
 
 ---
 
 ## ✨ Features
 
-| Feature | Description |
-|---|---|
-| 📊 **Text Analysis** | Instant word count, character count, and sentence estimation |
-| 🔠 **Case Conversion** | One-click conversion to UPPERCASE or lowercase |
-| 🧹 **Text Cleaning** | Strip extra whitespace and normalize spacing |
-| ⏱️ **Reading Time** | Estimates how long it takes to read your text |
-| 🌙 **Dark Mode** | Toggleable dark theme for comfortable use at any hour |
-| 🔗 **Client-Side Routing** | Smooth navigation via React Router v6 |
-| 🚫 **Custom 404 Page** | Friendly error page for invalid routes |
+### ✏️ Text Transformations
+
+| Feature                      | Description                                             |
+| ---------------------------- | ------------------------------------------------------- |
+| 🔠 **Uppercase / Lowercase** | One-click case conversion                               |
+| 🧹 **Remove Extra Spaces**   | Strips and normalizes all whitespace                    |
+| 🔍 **Find & Replace**        | Replace all occurrences of any word or phrase instantly |
+
+### 📊 Analysis & Insights
+
+| Feature                       | Description                                               |
+| ----------------------------- | --------------------------------------------------------- |
+| 🔢 **Word & Character Count** | Updates in real time as you type                          |
+| 📝 **Sentence Count**         | Detects sentences by punctuation                          |
+| ⏱️ **Reading Time**           | Estimates minutes to read based on word count             |
+| 📊 **Letter Frequency Chart** | Visual bar chart of every letter's frequency in your text |
+
+### 🛠️ Utilities
+
+| Feature                  | Description                                              |
+| ------------------------ | -------------------------------------------------------- |
+| 📋 **Copy to Clipboard** | Copy your full text with one click                       |
+| ⬇️ **Download as .txt**  | Export your text as a `.txt` file instantly              |
+| 🔊 **Text-to-Speech**    | Have your text read aloud using the browser's Speech API |
+| 🌙 **Dark Mode**         | Toggleable dark theme, synced across all pages           |
+
+### 🔗 Navigation
+
+| Feature             | Description                                               |
+| ------------------- | --------------------------------------------------------- |
+| **React Router v6** | Smooth client-side routing between Home and About         |
+| **Custom 404 Page** | Friendly error page for invalid routes with a back button |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [React.js](https://reactjs.org/) with functional components and Hooks
+- **Framework:** [React.js](https://reactjs.org/) with functional components and Hooks (`useState`, `useRef`)
 - **Routing:** [React Router DOM v6](https://reactrouter.com/)
 - **Styling:** [Bootstrap 5](https://getbootstrap.com/)
-- **State Management:** `useState`, `useEffect`
+- **APIs:** Web Speech API (Text-to-Speech), Clipboard API, Blob API (Download)
 
 ---
 
@@ -88,11 +111,11 @@ TextUtils-React/
 │   └── index.html
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.js       # Top navigation with dark mode toggle
-│   │   ├── TextForm.js     # Core text input and analysis component
-│   │   ├── About.js        # About page
-│   │   └── NotFound.js     # Custom 404 page
-│   ├── App.js              # Root component with routing setup
+│   │   ├── Navbar.js       # Top navigation with synced dark mode toggle
+│   │   ├── TextForm.js     # Core text input, analysis, and all utilities
+│   │   ├── About.js        # About page with accordion, synced to dark mode
+│   │   └── NotFound.js     # Custom 404 page with back-to-home button
+│   ├── App.js              # Root component with routing and alert system
 │   └── index.js            # Entry point
 ├── screenshots/
 │   ├── home.png
@@ -107,22 +130,39 @@ TextUtils-React/
 
 1. **Paste or type** any text into the input area on the Home page.
 2. Use the **action buttons** to transform your text:
-   - *Uppercase* — converts all characters to capitals
-   - *Lowercase* — converts all characters to small letters
-   - *Remove Extra Spaces* — cleans up irregular whitespace
-3. View the **text summary** below the input — word count, character count, and estimated reading time update instantly.
-4. Toggle **Dark Mode** from the navbar for a different visual experience.
-5. Visit the **About** page via the navbar to learn more about the app.
+   - _Uppercase / Lowercase_ — instant case conversion
+   - _Remove Extra Spaces_ — cleans up irregular spacing
+   - _Copy Text_ — copies to clipboard
+   - _Clear_ — wipes the textarea
+3. Use **Find & Replace** to swap out any word or phrase across the entire text.
+4. Click **Read Aloud** to have the browser speak your text. Click **Stop** to cancel.
+5. Click **Download .txt** to save your text as a local file.
+6. Click **Letter Frequency** to reveal a bar chart of letter distribution.
+7. Check the **Text Summary** cards for word count, character count, sentence count, and estimated reading time — all updating live.
+8. Toggle **Dark Mode** from the navbar for a different visual experience.
 
 ---
 
 ## 🌐 Routing Overview
 
-| Route | Component | Description |
-|---|---|---|
-| `/` | `TextForm` | Main text analyzer (Home) |
-| `/about` | `About` | About the application |
-| `*` | `NotFound` | Custom 404 for unknown routes |
+| Route    | Component  | Description                   |
+| -------- | ---------- | ----------------------------- |
+| `/`      | `TextForm` | Main text analyzer (Home)     |
+| `/about` | `About`    | About the application         |
+| `*`      | `NotFound` | Custom 404 for unknown routes |
+
+---
+
+## 🌐 Browser Compatibility
+
+| Feature          | Chrome | Firefox    | Safari | Edge |
+| ---------------- | ------ | ---------- | ------ | ---- |
+| Text-to-Speech   | ✅     | ⚠️ Partial | ✅     | ✅   |
+| Clipboard API    | ✅     | ✅         | ✅     | ✅   |
+| Download (.txt)  | ✅     | ✅         | ✅     | ✅   |
+| Letter Frequency | ✅     | ✅         | ✅     | ✅   |
+
+> ⚠️ Text-to-Speech on Firefox may behave inconsistently depending on the operating system.
 
 ---
 
@@ -149,8 +189,9 @@ This project is licensed under the [MIT License](./LICENSE).
 ## 👤 Author
 
 **Muhammad Zaqawi**
+
 - GitHub: [@Mzaq1559](https://github.com/Mzaq1559)
 
 ---
 
-> *Built with ❤️ using React.js*
+> _Built with ❤️ using React.js_
