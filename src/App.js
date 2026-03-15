@@ -5,7 +5,7 @@ import TextForm from "./Components/TextForm";
 import Alert from "./Components/Alert";
 import About from "./Components/About";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [alert, setAlert] = useState(null);
